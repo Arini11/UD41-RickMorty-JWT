@@ -14,7 +14,7 @@ export class CharactersComponent implements OnInit {
 
   ngOnInit(): void {
     this.api.getCharacters().subscribe(
-      response => this.characters = response.characters
+      response => this.characters = response
     )
   }
 

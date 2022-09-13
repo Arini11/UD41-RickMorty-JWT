@@ -11,7 +11,7 @@ export class CharactersService {
   constructor(private http: HttpClient) { }
 
   getCharacters(): Observable<any> {
-    return this.http.get("http://localhost:4200/assets/database.json");
+    return this.http.get("https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8");
   }
 
 }
