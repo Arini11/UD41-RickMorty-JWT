@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { Character } from './model/character.model';
 
-const BASE = 'http://rickmorty.herokuapp.com/characters'
+const BASE = 'https://rickmorty.herokuapp.com/characters'
 
 @Injectable({providedIn: 'root'})
 export class CharactersService {
