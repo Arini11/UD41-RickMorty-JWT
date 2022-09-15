@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CharactersComponent } from './characters/characters.component';
 import { AboutComponent } from './about/about.component';
+import { CharactersDetailComponent } from './characters-detail/characters-detail.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AboutComponent } from './about/about.component';
     AppComponent,
     HomeComponent,
     CharactersComponent,
-    AboutComponent
+    AboutComponent,
+    CharactersDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,7 @@
       <img src="{{character.image}}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{character.name}}</h5>
-        <a href="#" class="btn btn-primary">See more...</a>
+        <a [routerLink]="['/characters', character.id]" class="btn btn-primary">See more</a>
       </div>
     </div>
   </div>
