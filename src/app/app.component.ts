@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CharactersService } from './characters.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'UD37';
+
+  buscador:string = "";
+
+  constructor(private api: CharactersService,private router: Router) { }
+
+  searchTitle() {
+    this.api.findByName(this.buscador).subscribe(
+      response => {this.router.navigate(['/characters/',response])}
+    );
+  }
+
+
 }
