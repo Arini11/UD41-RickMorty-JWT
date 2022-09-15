@@ -1,21 +1,40 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import { Character } from './model/character.model';
 
+const BASE = 'http://localhost:3000/characters'
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class CharactersService {
 
-  constructor(private http: HttpClient) { }
+    constructor(private http : HttpClient) {}
 
-  getCharacters(): Observable<any> {
-    return this.http.get("https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8");
-  }
+    getAll(): Observable<Character[]> {
+        return this.http.get<Character[]>(BASE);
+    }
 
-  getCharacterById(id: number) {
-    return this.http.get("https://rickandmortyapi.com/api/character/"+id);
-  }
+    get(id : any): Observable<Character> {
+        return this.http.get<Character>(`${BASE}/${id}`);
+    }
 
+    create(data : any): Observable<any> {
+        return this.http.post(BASE, data);
+    }
+
+    update(id : any, data : any): Observable<any> {
+        return this.http.put(`${BASE}/${id}`, data);
+    }
+
+    delete(id : any): Observable<any> {
+        return this.http.delete(`${BASE}/${id}`);
+    }
+
+    deleteAll(): Observable<any> {
+        return this.http.delete(BASE);
+    }
+
+    findByName(name : any): Observable<Character[]> {
+        return this.http.get<Character[]>(`${BASE}?name=${name}`);
+    }
 }
