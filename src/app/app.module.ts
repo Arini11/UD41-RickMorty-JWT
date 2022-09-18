@@ -10,6 +10,8 @@ import { CharactersComponent } from './characters/characters.component';
 import { AboutComponent } from './about/about.component';
 import { CharactersDetailComponent } from './characters/characters-detail/characters-detail.component';
 import { AddCharacterComponent } from './characters/add-character/add-character.component';
+import { authInterceptorProviders } from './_helpers/authinterceptor';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { AddCharacterComponent } from './characters/add-character/add-character.
     CharactersComponent,
     AboutComponent,
     CharactersDetailComponent,
-    AddCharacterComponent
+    AddCharacterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,7 @@ import { AddCharacterComponent } from './characters/add-character/add-character.
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

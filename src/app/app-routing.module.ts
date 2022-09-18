@@ -5,6 +5,7 @@ import { AddCharacterComponent } from './characters/add-character/add-character.
 import { CharactersDetailComponent } from './characters/characters-detail/characters-detail.component';
 import { CharactersComponent } from './characters/characters.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'characters/:id',component:CharactersDetailComponent},
   {path:'add',component:AddCharacterComponent},
   {path:'about',component:AboutComponent},
+  {path:'login',component:LoginComponent},
 ];
 
 @NgModule({
